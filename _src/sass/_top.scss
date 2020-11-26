@@ -1,0 +1,25 @@
+.main_area {
+    width: 1020px;
+    margin: 0 auto;
+    
+    section {
+        margin-bottom: 30px;
+        overflow: hidden;
+        clear: both;
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        p  {
+            margin-bottom: 20px;
+        }
+        .thumb_img {
+            margin: 0 20px 20px 0;
+            float: left;
+        }
+        .left_thumb_para {
+            margin-left: 170px;
+        }
+    }
+}
