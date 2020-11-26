@@ -20,26 +20,43 @@ a {
 .header {
     height: 200px;
     width: 100%;
+    background: url("#{map-get($path, img)}header_001.jpg") no-repeat center top;
+    background-size: cover;
+
+    .title {
+        width: map-get($width, contents);
+        margin: 0 auto;
+        padding-top: 60px;
+        text-align: center;
+        @include textShadow(#fff, 1);
+    }
+
+    .sub_title {
+        @extend .title;
+        font-size: 1.2rem;
+        padding-top: 0;
+    }
 }
 
 .g_navi {
-    height: 60px;
+    height: $GnaviHeight;
     margin: 0 auto;
     border-bottom: 1px solid #ccc;
     ul {
-        width: 600px;
+        width: $GnaviButtonWidth * 4;
         margin: 0 auto;
         overflow: hidden;
 
         li {
-            width: 150px;
-            height: 60px;
+            width: $GnaviButtonWidth;
+            height: $GnaviHeight;
             float: left;
             text-align: center;
 
             a {
                 display: block;
-                line-height: 60px;
+                line-height: $GnaviHeight;
+
                 &:hover {
                     background: rgba(#000, 0.1);
                 }
@@ -49,8 +66,44 @@ a {
 }
 
 .contents {
-    height: 1024px;
-    width: 100%;
+    width: map-get($width, contents);
+    margin: 0 auto;
+    overflow: hidden;
+
+    .main_area {
+        width: map-get($width, contents) - map-get($width, sideArea) - $AreaPadding * 2;
+        float: left;
+        padding: $AreaPadding;
+    }
+
+    .side_area {
+        width: map-get($width, sideArea) - $AreaPadding * 2;
+        float: right;
+        padding: $AreaPadding;
+
+        %side_area_box {
+            border: 1px solid #eee;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .search_area {
+            @extend %side_area_box;
+            margin-bottom: 20px;
+        }
+
+        .category_area {
+            @extend %side_area_box;
+
+            .category_list li {
+                border-bottom: 1px solid #eee;
+                @include linkArrow;
+            }
+            .category_list li:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
 }
 
 .footer {

@@ -1,11 +1,9 @@
 .main_area {
-    width: 1020px;
-    margin: 0 auto;
-    
+
     section {
         margin-bottom: 30px;
         overflow: hidden;
-        clear: both;
+        @include clearfix;
 
         h3 {
             font-size: 1.5rem;
