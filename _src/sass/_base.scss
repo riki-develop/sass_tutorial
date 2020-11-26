@@ -66,20 +66,40 @@ a {
 }
 
 .contents {
+    box-sizing: border-box;
     width: map-get($width, contents);
     margin: 0 auto;
     overflow: hidden;
 
+    @include media ("tb") {
+        width: 100%;
+    }
+
     .main_area {
+        box-sizing: border-box;
         width: map-get($width, contents) - map-get($width, sideArea) - $AreaPadding * 2;
         float: left;
         padding: $AreaPadding;
+
+        @include media ("tb") {
+            width: 100%;
+        }
+
+        @include media ("sp") {
+            width: 100%;
+            float: none;
+        }
     }
 
     .side_area {
         width: map-get($width, sideArea) - $AreaPadding * 2;
         float: right;
         padding: $AreaPadding;
+
+        @include media ("sp") {
+            width: 100%;
+            float: none;
+        }
 
         %side_area_box {
             border: 1px solid #eee;

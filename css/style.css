@@ -66,12 +66,14 @@ a {
 }
 
 .contents {
+  box-sizing: border-box;
   width: 1024px;
   margin: 0 auto;
   overflow: hidden;
 }
 
 .contents .main_area {
+  box-sizing: border-box;
   width: 684px;
   padding: 20px;
   float: left;
@@ -273,6 +275,26 @@ a {
 
 .pb50 {
   padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .contents {
+    width: 100%;
+  }
+  .contents .main_area {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .contents .main_area {
+    width: 100%;
+    float: none;
+  }
+  .contents .side_area {
+    width: 100%;
+    float: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
